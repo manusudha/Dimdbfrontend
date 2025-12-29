@@ -36,7 +36,7 @@ export default function Home(){
                     <span><img src="https://m.media-amazon.com/images/M/MV5BYzExZmYzMWItOWIyMy00ZTZiLWEwM2EtMTU5NjQzYjExMDYyXkEyXkFqcGdeQWFybm8@._V1_QL75_UX760_CR0,0,760,428_.jpg" alt="" /></span>
                     <span><img src="https://m.media-amazon.com/images/M/MV5BNDllZjAzODktMTlmZS00ZDA2LTlmOTAtODgzZjQ0NTZlMjBlXkEyXkFqcGc@._V1_QL75_UY414_CR26,0,280,414_.jpg" alt="" /></span>
                  </span>
-                  <div className="absolute ml-[610px] mt-42 text-[14px]   w-82 h-[30px] text-center content-center font-medium text-black z-10 rounded-full bg-yellow-500 cursor-pointer" onClick={()=>Navigate("/signin",{replace:true})}>SignUp / Signin for more access </div>
+                  <div className="absolute ml-[500px] mt-42 text-[14px]   w-82 h-[30px] text-center content-center font-medium text-black z-10 rounded-full bg-yellow-500 cursor-pointer" onClick={()=>Navigate("/signin",{replace:true})}>SignUp / Signin for more access </div>
                  <span className="blur-[20px]  justify-between items-center relative opacity-25  flex  flex-row  w-full bg-linear-to-t from-white-900 to-blue-400 z-0 ">
                       <span><img src="https://m.media-amazon.com/images/M/MV5BZDRmMjU1OTQtMjliZC00MTM1LWI0NzgtMjFmYWI3ZDc3ZWZiXkEyXkFqcGc@._V1_QL75_UX760_CR0,0,760,428_.jpg" alt="" /></span> 
                       <span><img src="https://m.media-amazon.com/images/M/MV5BYjAwZWQ2NDMtMWYzOC00ODMxLWJiN2MtMTVlMmE0MzY0NWI4XkEyXkFqcGc@._V1_QL75_UX760_CR0,0,760,428_.jpg" alt="" /></span>
