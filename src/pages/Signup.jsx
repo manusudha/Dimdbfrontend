@@ -55,7 +55,7 @@ export default function Signup(){
                                             Setcorrectpassword(false)
                                          }else{
                                          Setsigningup(false)
-                                         const res = await axios.post("http://localhost:8000/createUser",{
+                                         const res = await axios.post("https://dummyimdbbackend.onrender.com/createUser",{
                                                   username,
                                                   email,
                                                   password,

@@ -32,7 +32,7 @@ const Navigate =useNavigate();
   const fetchMovies=async()=>{
       
       {console.log(page,limit)}
-      const allMovies = await axios.get(`http://localhost:8000/Movies?page=${page}&limit=${limit}`);
+      const allMovies = await axios.get(`https://dummyimdbbackend.onrender.com/Movies?page=${page}&limit=${limit}`);
       Setfetchedmovies(allMovies.data.data);
       setNoOfPage(allMovies.data.calcpages)
       
@@ -41,7 +41,7 @@ const Navigate =useNavigate();
 
    const Validate=async()=>{
             try{
-            const res= await axios.get("http://localhost:8000/me",{headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}})
+            const res= await axios.get("https://dummyimdbbackend.onrender.com/me",{headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}})
             setProfileiconNu(res.data.user.name)
             if(res){
                 toast('welcome to dashboard',{icon:'🙏'})
@@ -74,7 +74,7 @@ const Navigate =useNavigate();
   
  const SearchedMovie=async()=>{
        try{
-               const res=await axios.get(`http://localhost:8000/Movies/search?originalTitle=${titlesearch}&description=${descriptionsearch}&limit=${limit}&page=${page}`,{
+               const res=await axios.get(`https://dummyimdbbackend.onrender.com/Movies/search?originalTitle=${titlesearch}&description=${descriptionsearch}&limit=${limit}&page=${page}`,{
                 headers:{
                     Authorization:`Bearer ${localStorage.getItem('token')}`
                 }
@@ -92,7 +92,7 @@ const Navigate =useNavigate();
  //function for sorting movie 
  const Sortmovie=async()=>{
      try{
-           const res=await axios("http://localhost:8000/Movies/sorted",{
+           const res=await axios("https://dummyimdbbackend.onrender.com/Movies/sorted",{
             params:{
                  sortBy,
                  order,

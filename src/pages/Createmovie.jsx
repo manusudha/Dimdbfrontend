@@ -13,7 +13,7 @@ const [created,setCreated]=useState(true);
 const Navigate =useNavigate();
         const Validate=async()=>{
             try{
-            const res= await axios.get("http://localhost:8000/me",{headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}})
+            const res= await axios.get("https://dummyimdbbackend.onrender.com/me",{headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}})
             if(!res.data.user.isAdmin){
                 // to just make sure the person who is adding should have admin access
                 toast("Admin Access required",{icon:'⚠️'})
@@ -41,7 +41,7 @@ const Navigate =useNavigate();
         
             setCreated(false)
              
-           const iscreated =await axios.post("http://localhost:8000/createMovie",
+           const iscreated =await axios.post("https://dummyimdbbackend.onrender.com/createMovie",
                             {
                                 originalTitle, 
                                 description,

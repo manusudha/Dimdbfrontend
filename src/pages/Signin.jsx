@@ -12,7 +12,7 @@ export default function Signin(){
      const Navigate = useNavigate()
      const Validate=async()=>{
          try{
-           const res = await axios.get("http://localhost:8000/me",{headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}})
+           const res = await axios.get("https://dummyimdbbackend.onrender.com/me",{headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}})
            if(res){
                     
                     if(res.data.user.isAdmin){Navigate('/Adminuser',{replace:true})}
@@ -65,7 +65,7 @@ export default function Signin(){
                                         }
                                      else{
                                         Setissigningin(false) 
-                                        const res = await axios.post("http://localhost:8000/signin",{
+                                        const res = await axios.post("https://dummyimdbbackend.onrender.com/signin",{
                                                        email,
                                                        password
                                                        })

@@ -21,7 +21,7 @@ const UpdateMovie=async()=>{
     try{
         console.log("this is id : "+id)
         setIsUpdated(false)
-        const res= await axios.put(`http://localhost:8000/Movies?id=${id}`,
+        const res= await axios.put(`https://dummyimdbbackend.onrender.com/Movies?id=${id}`,
              {
                   originalTitle,
                   description,
