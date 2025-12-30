@@ -84,12 +84,12 @@ const Navigate =useNavigate();
                  </nav>
                 <div className="flex flex-col items-center justify-center bg-gray-200 h-screen">                           
                             <div className="flex h-[400px] w-[350px] flex-col justify-between items-center mx-auto bg-white rounded-md">
-                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none mt-12"  type="text" placeholder="Movie Title"                  onChange={(e)=>SetoriginalTitle(e.target.value)}           />
-                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none" type="text" placeholder="Description"                         onChange={(e)=>Setdescription(e.target.value)}           />
-                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none" type="text"  placeholder="Release Date"                       onChange={(e)=>SetreleaseDate(e.target.value)}           />
-                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none"  type="number"  placeholder="Duration of Movie"                 onChange={(e)=>SetruntimeMinutes(e.target.value)}           />
-                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none" type="number"  placeholder="Rating"                             onChange={(e)=>SetaverageRating(e.target.value)}           />
-                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none mb-12"type="text" placeholder="image link"                     onChange={(e)=>Setimagelink(e.target.value)}           />
+                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none mt-12 text-[14px]"  type="text" placeholder="Movie Title"                  onChange={(e)=>SetoriginalTitle(e.target.value)}           />
+                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none text-[14px]" type="text" placeholder="Description"                         onChange={(e)=>Setdescription(e.target.value)}           />
+                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none text-[14px]" type="text"  placeholder="Release(yyyy-mm-dd)"                       onChange={(e)=>SetreleaseDate(e.target.value)}           />
+                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none text-[14px]"  type="number"  placeholder="Duration(in minuts)"                 onChange={(e)=>SetruntimeMinutes(e.target.value)}           />
+                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none text-[14px]" type="number"  placeholder="Rating(out of 5)"                             onChange={(e)=>SetaverageRating(e.target.value)}           />
+                                <input  className="text-center h-8 w-64 border-blue-200 border-2 rounded-md outline-none mb-12 text-[14px]"type="text" placeholder="image link"                     onChange={(e)=>Setimagelink(e.target.value)}           />
                                 
                             </div>
                             {created?<button className="bg-gray-100 border-2 border-blue-200 rounded-md h-12 w-32 cursor-pointer mt-2" onClick={()=>CreateMovieonclick()}>Create</button>:<button className="bg-gray-100 border-2 border-blue-200 rounded-md h-12 w-32 cursor-pointer mt-2">creating movie...</button> }
