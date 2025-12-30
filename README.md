@@ -1,16 +1,50 @@
-# React + Vite
+# 🎬 D-IMDb Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Live Demo 
+**Frontend:** [https://dimdbfrontend.vercel.app/](https://dimdbfrontend.vercel.app/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 👤 User Functionality 
+* **IMDb Integration:** View movie details fetched from the IMDb Top 250 dataset.
+* **Advanced Search:** Search for movies by title or description with optimized query performance.
+* **Smart Sorting:** Sort the catalog by Name, Rating, Release Date, and Duration.
+* **Pagination:** Smooth browsing experience with server-side pagination.
+* **Responsive Design**
+* **Secure Dashboard:** Accessible only via JWT-authenticated admin accounts.
+* **Movie Management:** Full CRUD (Create, Read, Update, Delete) capabilities.
+* **Protected Routes:** Frontend and backend guards to prevent unauthorized access.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+---
+
+## 🛠️ Tech Stack 
+* **Frontend:** react, tailwincsss, Axios 
+* **Backend:** Express.js , jwt 
+* **Database:** MongoDB
+
+---
+
+## 💻 Installation & Setup
+
+### Frontend setup 
+```bash
+git clone https://github.com/yourusername/Dimdbfrontend.git
+cd Dimdbfrontend 
+npm install 
+npm run dev
+```
+### Backend setup 
+```bash
+git clone https://github.com/manusudha/dummyimdbbackend.git
+ # setup .env file with below given variables 
+ cd dummyimdbbackend 
+ npm i
+ node index.js
+ .env config
+  MONGO_URI=your_mongodb_atlas_uri 
+  JWT_SECRET=your_super_secret_key
+  ```
