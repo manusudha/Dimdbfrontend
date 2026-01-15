@@ -6,6 +6,7 @@ import Pagi from "../components/Pagi";
 import Createmovie from "./Createmovie"
 import toast,{Toaster} from "react-hot-toast"
 export default function Normaluser(){
+    const[hamberger,sethamberger]=useState(false)
   const [profileicon,setProfileicon]=useState('');
   const [page,Setpage]=useState(1);
   const [limit,Setlimit]=useState(50);
@@ -115,18 +116,27 @@ return <div>
             <Toaster possition="top-center"  reverseOrder={false}/>
              <nav className="justify-between flex items-center bg-black text-white">
                  <span className="cursor-pointer"> <img src={imdblogo} alt="imdb logo " /></span>
-                 <span ><input className="bg-white w-[400px] text-black outline-blue-200 rounded-md" placeholder="🔎 Search Movie by Title" value={titlesearch} type="text"  onChange={(e)=>{setTitlesearch(e.target.value);setIsSearching(true);Setpage(1)}}/></span>
-                 <button onClick={()=>{setDescriptionsearch("");setTitlesearch("");setIsSearching(false);Setpage(1)}}  className="rounded-md outline-blue-300 h-8 w-24 text-black border-2 cursor-pointer hover:bg-blue-50 bg-pink-100">clear search</button>
-                 <span ><input className="bg-white w-[400px] text-black outline-blue-200 rounded-md" placeholder="🔎  Search Movie by Description" value={descriptionsearch} type="text"  onChange={(e)=>{setDescriptionsearch(e.target.value);setIsSearching(true);Setpage(1)}}/></span>
-                 <span className="flex justify-center items-center">
+                 <span ><input className="bg-white w-[200px] md:w-[400px] text-black outline-blue-200 rounded-md" placeholder="🔎 Search Movie by Title" value={titlesearch} type="text"  onChange={(e)=>{setTitlesearch(e.target.value);setIsSearching(true);Setpage(1)}}/></span>
+                 <button onClick={()=>{setDescriptionsearch("");setTitlesearch("");setIsSearching(false);Setpage(1)}}  className="rounded-md outline-blue-300 h-auto w-24 text-black border-2 cursor-pointer hover:bg-blue-50 bg-pink-100">clear search</button>
+                 <span ><input className=" hidden md:flex bg-white w-[400px] text-black outline-blue-200 rounded-md" placeholder="🔎  Search Movie by Description" value={descriptionsearch} type="text"  onChange={(e)=>{setDescriptionsearch(e.target.value);setIsSearching(true);Setpage(1)}}/></span>
+                 <span className="hidden md:flex flex justify-center items-center">
                      <span className="h-12 w-12 rounded-full items-center justify-center flex bg-white text-black font-medium text-xl mr-12 cursor-pointer"><div>{profileiconNu.toUpperCase()[0]}</div></span>
                      <span className="cursor-pointer" onClick={()=>{localStorage.removeItem('token'); Navigate("/signin",{replace:true})}} ><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg></span>
-                 </span>         
+                 </span>
+                 <span className="md:hidden ">
+                        <svg  className="relative cursor-pointer z-50  relative w-12 h-12" onClick={()=>{sethamberger(!hamberger)}} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16"><path fill="#ffffff" fill-rule="evenodd" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75M2 8a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5A.75.75 0 0 1 2 8m0 4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/></svg>
+                         <span className={`duration-700 ease-in-out transform transition-transform absolute left-0 top-[6%] w-full z-40 bg-white border-1 border-blue-100 flex justify-between flex-col font-semibold text-xl ${hamberger?"opacity-100 translate-y-0":"opacity-0 -translate-y-10 pointer event none"}`}>
+                            <span className="h-12 w-12 rounded-full items-center justify-center flex   font-medium text-xl mr-12 cursor-pointer bg-black text-white"><div>{profileicon.toUpperCase()[0]}</div></span>
+                            <span className="cursor-pointer" onClick={()=>{localStorage.removeItem('token'); Navigate("/signin",{replace:true})}} ><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg></span> 
+                         </span>
+                 </span>
+
+                    
              </nav>
               <span className="flex justify-center items-center mt-4 ">
                     <Pagi noOfPage={noOfPage} page={page} Setpage={Setpage}/>
               </span>
-             <span className="flex flex-row justify-between items-center mx-auto w-[1150px] mt-2">
+             <span className="flex flex-row justify-between items-center mx-auto  mt-2">
                  
                      <span className="flex justify-between items-center w-[110px] mt-4">
                           <span>Filter By :</span>
@@ -146,7 +156,7 @@ return <div>
                         <button onClick={()=>{setIsSorting(false),setSortBy('name'),setOrder('asc'),Setpage(1)}} className="bg-gray-100 border-2  border-blue-200 rounded-md  w-28 h-8 cursor-pointer ">clear sort</button>
                     </span>
              </span>
-             <div className="grid grid-cols-5 gap-2 mt-8">
+             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 mt-8">
                 
                   {
                   fetchedmovies.map((m,i)=>{ return <div key={i} >
